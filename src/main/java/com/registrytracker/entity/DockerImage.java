@@ -25,6 +25,9 @@ public class DockerImage {
     @Column(name = "created_date")
     private LocalDate createdDate;
     
+    @Column(name = "internal_notes")
+    private String internalNotes;  // Internal field - NOT exposed in API
+    
     @OneToMany(mappedBy = "dockerImage", cascade = CascadeType.ALL)
     private List<SecurityScan> securityScans = new ArrayList<>();
     
@@ -43,6 +46,9 @@ public class DockerImage {
     
     public LocalDate getCreatedDate() { return createdDate; }
     public void setCreatedDate(LocalDate createdDate) { this.createdDate = createdDate; }
+    
+    public String getInternalNotes() { return internalNotes; }
+    public void setInternalNotes(String internalNotes) { this.internalNotes = internalNotes; }
     
     public List<SecurityScan> getSecurityScans() { return securityScans; }
     public void setSecurityScans(List<SecurityScan> securityScans) { this.securityScans = securityScans; }

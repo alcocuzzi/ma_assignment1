@@ -78,6 +78,8 @@ public class ImageController {
         image.setTag(dto.getTag());
         image.setRegistry(dto.getRegistry());
         image.setCreatedDate(dto.getCreatedDate());
+        // Internal field - not exposed in DTO, auto-populated
+        image.setInternalNotes("Auto-created via API");
         return image;
     }
 }

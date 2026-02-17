@@ -33,6 +33,9 @@ public class SecurityScan {
     @Column(name = "status")
     private String status;
     
+    @Column(name = "scanner_version")
+    private String scannerVersion;  // Internal field - NOT exposed in API
+    
     // Getters and Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
@@ -57,4 +60,7 @@ public class SecurityScan {
     
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
+    
+    public String getScannerVersion() { return scannerVersion; }
+    public void setScannerVersion(String scannerVersion) { this.scannerVersion = scannerVersion; }
 }

@@ -94,6 +94,8 @@ public class ScanController {
         scan.setMediumVulns(dto.getMediumVulns());
         scan.setLowVulns(dto.getLowVulns());
         scan.setStatus(dto.getStatus());
+        // Internal field - not exposed in DTO, auto-populated
+        scan.setScannerVersion("Trivy-v0.48.0");
         return scan;
     }
 }
