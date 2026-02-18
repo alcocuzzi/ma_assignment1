@@ -180,11 +180,28 @@ imageTracker/
 │       ├── ImageRepository.java
 │       └── ScanRepository.java
 ├── src/main/resources/
-│   └── application.properties             # Database and app configuration
+│   └── application.yml                    # Database and app configuration
+├── .env.example                           # Environment variable template
 ├── pom.xml                                # Maven dependencies
 ├── Dockerfile                             # Container image definition
 └── docker-compose.yml                     # Multi-container setup
 ```
+
+## DB Configuration
+
+The application uses **environment variables** for configuration, avoiding hardcoded credentials:
+
+### Environment Variables
+
+| Variable | Description | Default Value |
+|----------|-------------|---------------|
+| `DB_HOST` | Database host | `localhost` |
+| `DB_PORT` | Database port | `5432` |
+| `DB_NAME` | Database name | `registrydb` |
+| `DB_USERNAME` | Database username | `postgres` |
+| `DB_PASSWORD` | Database password | `postgres` |
+| `SERVER_PORT` | API server port | `8080` |
+
 
 ## Running the Application
 
