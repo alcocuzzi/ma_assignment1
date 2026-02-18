@@ -21,11 +21,11 @@ The microservice API integrates with PostgreSQL microservice for database modell
 ### Domain Model
 
 - **DockerImage** (Parent)
-  - Fields: id, imageName, tag, registry, createdDate
+  - Fields: id, imageName, tag, registry, internalNotes (Not Exposed in the API response) createdDate
   - One DockerImage may have multiple SecurityScans
   
 - **SecurityScan** (Child)
-  - Fields: id, imageId, scanDate, criticalVulns, highVulns, mediumVulns, lowVulns, status
+  - Fields: id, imageId, scanDate, criticalVulns, highVulns, mediumVulns, lowVulns, scannerVersion (Not Exposed in the API Response) status
   - Many SecurityScans belong to one DockerImage
 
 ## API Endpoints
